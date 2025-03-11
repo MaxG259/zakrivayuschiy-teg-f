@@ -144,7 +144,7 @@
 .card__like-button {
   background-color: transparent;
   inline-size: 130px;
-  block-size: 38px; 
+  block-size: 38px;
   border: 2px solid var(--accent-color);
   cursor: pointer;
 }
