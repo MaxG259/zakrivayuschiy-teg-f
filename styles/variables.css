@@ -1,1 +1,25 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  --font-main: 'Inter'; /* основной (вариативный) шрифт */
+  --font-accent: 'PressStart2P'; /* акцентный шрифт */
+  --text-weight: 400; /* основной вес шрифта */
+  --font-size: 1.125rem;
+  --font-size-dialog: 0.875rem;
+  --title-font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --title__text-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --header-inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);;
+  --header-block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
+  --card-inline-size: clamp(23.4375rem, 16.3732rem + 30.1408vw, 43.5rem);
+  --save-button-inline-s: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
+  --backdrop-color: rgb(0 0 0 / 0.75);
+  --background-image:
+  repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+  repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+  repeating-linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+  --accent-color: #000;
+  --main-color: #fff;
+  --text-stroke-color: #fff;
+  --contour-color-like: black;
+  --body-sparks-color-like: #FF0000;
+}

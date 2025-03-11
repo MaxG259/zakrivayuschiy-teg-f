@@ -1,1 +1,1 @@
-В этой папке будут храниться все необходимые SVG-файлы для сайта.
+https://github.com/MaxG259/zakrivayuschiy-teg-f.git

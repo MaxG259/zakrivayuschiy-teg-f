@@ -9,3 +9,105 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+/* лайк */
+
+.like-icon {
+  height: 2.375rem;
+  cursor: pointer;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: 2px solid var(--accent-color);
+}
+
+/* контур лайка */
+
+.like-icon.is-liked .contour {
+  fill: var(--body-sparks-color-like);
+  transition: fill .3s linear .06s;
+}
+
+/* тело лайка */
+
+.main-body {
+  fill: transparent;
+  transition: fill .3s linear;
+}
+
+.like-icon:hover .main-body { /*лайк черный при наведении */
+  fill: var(--contour-color-like);
+  transition: fill .3s linear .05s;
+}
+
+.like-icon:active .main-body { /*лайк красный при нажатие */
+  fill: var(--body-sparks-color-like);
+  transition: fill .3s linear .05s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--body-sparks-color-like);
+  transition: fill .3s linear;
+}
+
+/* нутро лайка */
+
+.core {
+  transition: fill .3s linear .03s;
+}
+
+.like-icon:hover .core { /* лайк черный при наведении */
+  fill: var(--contour-color-like);
+  transition: fill .3s linear;
+}
+
+.like-icon:active .core { /* лайк красный при нажатие */
+  fill: var(--body-sparks-color-like);
+  transition: fill .3s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--body-sparks-color-like);
+  transition: fill .3s linear;
+}
+
+/* брызгки лайка */
+
+.sparks {
+  opacity: 0;
+  fill: var(--body-sparks-color-like)
+}
+
+/* масштабирование лайка */
+
+.like-icon.is-liked .heart {
+  animation: heart 0.3s ease-in 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s;
+}
+
+@keyframes heart {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 1.25;
+  }
+}
+
+@keyframes sparks {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
