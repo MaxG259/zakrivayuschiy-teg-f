@@ -17,8 +17,10 @@
   font-size: var(--font-size);
   background-image: var(--background-image);
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +34,7 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  font-family: var(--font-accent);
+  font-family: var(--font-accent), fantasy;
   text-transform: uppercase;
   outline: 2px solid var(--accent-color);
   background-color: #fff;
@@ -40,8 +42,8 @@
 
 .header-sizes {
   inline-size: var(--header-inline-size);
-  block-size: var(--header-block-size);
-  margin-block: 6.25rem; /* 100px */
+  min-block-size: var(--header-block-size);
+  margin-block: 6.25rem;
 }
 
 .title {
@@ -58,13 +60,14 @@
 .content {
   display: grid;
   gap: 52px;
+  align-items: center;
+  justify-items: center;
   padding-block-end: 103px;
 }
 
 .card {
   background-color: var(--main-color);
   outline: 2px solid var(--accent-color);
-  overflow: hidden;
 }
 
 .card-sizes {
@@ -85,7 +88,7 @@
 .card-label {
   position: absolute;
   z-index: 1;
-  font-family: 'PressStart2P';
+  font-family: var(--font-accent), fantasy;
   font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
   inset-block-start: 27px;
   inset-inline-end: 25px;
@@ -109,6 +112,8 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1 / 1;
 }
 
 .card-content {
@@ -128,7 +133,6 @@
   display: flex;
   gap: 5px;
   justify-content: flex-end;
-  margin-top: auto;
 }
 
 .card__icon-button {
@@ -145,13 +149,12 @@
   background-color: transparent;
   inline-size: 130px;
   block-size: 38px;
-  border: 2px solid var(--accent-color);
   cursor: pointer;
 }
 
 .button__text {
   position: relative;
-  font-family: 'PressStart2P';
+  font-family: var(--font-accent), fantasy;
   font-size: 14px;
   white-space: nowrap;
   mix-blend-mode: difference; /* режим смешивания для текста */
@@ -161,15 +164,16 @@
 /* анимация кнопок */
 
 .button {
+  border: 2px solid var(--accent-color);
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
 }
 
 .button:focus {
   outline: none;
   box-shadow: 2px 2px 0 var(--accent-color);
-  transition: box-shadow 0.3s ease;
 }
 
 .button::before {
@@ -196,7 +200,6 @@
 /* сохранить на память */
 
 .save-button {
-  border: none;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -205,7 +208,7 @@
   padding-inline: 18px;
   inline-size: var(--save-button-inline-s);
   block-size: 3.4375rem;
-  outline: 2px solid var(--accent-color);
+  border: 2px solid var(--accent-color);
 }
 
 .floppy-image {
@@ -215,11 +218,10 @@
 /* всплывающее окно */
 
 .dialog-save[open] {
-  max-inline-size: 22.0625rem;
-  padding: 30px;
+  max-inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
   display: grid;
   gap: 30px;
-  overflow: hidden;
+  padding: 30px;
 }
 
 .dialog-save[open]::backdrop {
@@ -238,7 +240,7 @@
 }
 
 .dialog-text {
-  font-family: var(--font-accent);
+  font-family: var(--font-accent), fantasy;
   font-size: var(--font-size-dialog);
   font-weight: var(--text-weight);
   text-transform: uppercase;
@@ -246,16 +248,16 @@
 }
 
 .close-button {
-  max-width: 100%;
+  background-color: #fff;
   border: 2px solid var(--accent-color);
-  inline-size: 293px;
-  block-size: 38px;
+  inline-size: 100%;
+  block-size: 2.375rem;
 }
 
 /* фильтры */
 
 .filter-green-blur {
-  filter: sepia(50%) brightness(100%) contrast(100%) hue-rotate(90deg) blur(0.5px) drop-shadow(10px 10px 15px rgba(0, 255, 0, 0.7));
+  filter: sepia(50%) brightness(100%) contrast(100%) hue-rotate(90deg) blur(0.5px);
 }
   
 .filter-grayscale {
@@ -263,7 +265,7 @@
 }
 
 .filter-saturate {
-  filter: sepia(70%) saturate(200%) blur(1px) drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.5));
+  filter: sepia(70%) saturate(200%) blur(1px);
 }
 
 .filter-brightness {
@@ -275,7 +277,7 @@
 }
 
 .filter-contrast {
-  filter: blur(2px) brightness(85%) contrast(140%) drop-shadow(5px 5px 5px rgba(255, 0, 0, 0.6));
+  filter: blur(2px) brightness(85%) contrast(140%);
 }
 
 .filter-sepia {
@@ -283,10 +285,11 @@
 }
 
 .filter-shadow {
-  filter: contrast(200%) brightness(70%) saturate(0%) drop-shadow(0 0 10px rgba(255, 255, 0, 0.8));
+  filter: contrast(200%) brightness(70%) saturate(0%);
 }
 
 @media (width <= 375px) {
+
   .save-button {
     flex-direction: column;
     block-size: 5.25rem;

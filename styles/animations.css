@@ -14,6 +14,7 @@
 
 .like-icon {
   height: 2.375rem;
+  width: 2.5rem;
   cursor: pointer;
 }
 
@@ -51,7 +52,7 @@
 
 .like-icon.is-liked .main-body {
   fill: var(--body-sparks-color-like);
-  transition: fill .3s linear;
+  transition: fill .3s linear .05s;
 }
 
 /* нутро лайка */
@@ -79,13 +80,14 @@
 
 .sparks {
   opacity: 0;
-  fill: var(--body-sparks-color-like)
+  fill: var(--body-sparks-color-like);
 }
 
 /* масштабирование лайка */
 
 .like-icon.is-liked .heart {
   animation: heart 0.3s ease-in 0.1s;
+  transform-origin: 23px 30% 10px;
 }
 
 .like-icon.is-liked .sparks {
