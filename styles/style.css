@@ -42,17 +42,19 @@
 
 .header-sizes {
   inline-size: var(--header-inline-size);
-  min-block-size: var(--header-block-size);
+  /* min-block-size: var(--header-block-size); */
   margin-block: 6.25rem;
 }
 
 .title {
   font-size: var(--title-font-size);
   font-weight: var(--weight-regular);
+  padding-block-start: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
 }
 
 .title__text {
   font-size: var(--title__text-font-size);
+  padding-block-end: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
 }
 
 /* карточки */
